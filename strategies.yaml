@@ -1,0 +1,564 @@
+strategies:
+  - id: flipped
+    display_name: "Flipped Classroom"
+    description: >
+      Los estudiantes acceden a contenidos teóricos antes de clase. El tiempo presencial se dedica a resolución de problemas, debates y aplicación práctica.
+    taxonomies:
+      - bloom: [ "Understand", "Apply", "Analyze" ]
+      - tpack: [ "TPK", "TCK" ]
+      - abet: [ "SO1", "SO5" ]
+    nsm_metrics:
+      - id: prework_completion_rate
+        display_name: "Porcentaje de estudiantes que completan el prework"
+        type: quantitative
+      - id: active_participation
+        display_name: "Participación activa en clase"
+        type: qualitative
+    evidence:
+      - quiz_results
+      - actividad_practica_en_clase
+      - reflexion_escrita
+    implementation_notes: |
+      Utilizar videos cortos para el prework. Iniciar clase con quiz diagnóstico y luego dedicar tiempo a resolución colaborativa de ejercicios.
+    references:
+      - "Bishop, J.L., & Verleger, M.A. (2013). The Flipped Classroom: A Survey of the Research."
+    template: flipped.md.jinja
+
+  - id: pbl
+    display_name: "Problem-Based Learning (PBL)"
+    description: >
+      Los estudiantes trabajan en la solución de un problema complejo y abierto, desarrollando pensamiento crítico, investigación y habilidades de colaboración.
+    taxonomies:
+      - bloom: [ "Analyze", "Evaluate", "Create" ]
+      - abet: [ "SO2", "SO6" ]
+    nsm_metrics:
+      - id: teamwork_quality
+        display_name: "Calidad del trabajo en equipo"
+        type: qualitative
+      - id: problem_resolution
+        display_name: "Resolución efectiva del problema"
+        type: quantitative
+    evidence:
+      - entregable_final
+      - presentacion_grupal
+      - autoevaluacion
+    implementation_notes: |
+      Definir un caso contextualizado y entregar recursos mínimos; el docente actúa como facilitador y orientador.
+    references:
+      - "Barrows, H. S. (1996). Problem-based learning in medicine and beyond: A brief overview."
+    template: pbl.md.jinja
+
+  - id: maker_space
+    display_name: "Maker Space / STEM-STEAM Projects"
+    description: >
+      Espacios y proyectos prácticos donde los estudiantes diseñan, construyen y experimentan con tecnología, ciencia y arte.
+    taxonomies:
+      - bloom: [ "Create", "Apply", "Analyze" ]
+      - steam: [ "Science", "Technology", "Engineering", "Arts", "Mathematics" ]
+      - stem: [ "Science", "Technology", "Engineering", "Mathematics" ]
+    nsm_metrics:
+      - id: prototype_count
+        display_name: "Cantidad de prototipos"
+        type: quantitative
+      - id: creative_integration
+        display_name: "Nivel de integración creativa"
+        type: qualitative
+    evidence:
+      - prototipo_funcional
+      - bitacora_proyecto
+      - presentacion_final
+    implementation_notes: |
+      Fomenta el uso de impresoras 3D, electrónica básica, arte digital, robótica y proyectos interdisciplinarios. Evalúa tanto el proceso como el producto final.
+    references:
+      - "Martinez, S.L. & Stager, G.S. (2013). Invent to Learn: Making, Tinkering, and Engineering in the Classroom."
+    template: maker_space.md.jinja
+
+  - id: scrum
+    display_name: "Scrum / Agile"
+    description: >
+      El curso se organiza en sprints de trabajo colaborativo, donde los estudiantes planifican, ejecutan y revisan entregables en ciclos cortos, priorizando iteración y feedback.
+    taxonomies:
+      - bloom: [ "Apply", "Analyze", "Create" ]
+      - abet: [ "SO3", "SO5", "SO6" ]
+    nsm_metrics:
+      - id: sprint_completion
+        display_name: "Cumplimiento de sprints"
+        type: quantitative
+      - id: peer_feedback
+        display_name: "Feedback entre pares"
+        type: qualitative
+    evidence:
+      - backlog
+      - entregable_iterativo
+      - retrospectiva
+    implementation_notes: |
+      Cada sprint inicia con planning y termina con una demo y retrospectiva. El docente actúa como product owner y los estudiantes como equipo scrum.
+    references:
+      - "Schwaber, K., & Sutherland, J. (2020). The Scrum Guide."
+    template: scrum.md.jinja
+
+  - id: agile
+    display_name: "Agile Methodologies"
+    description: >
+      Se aplican principios ágiles como adaptabilidad, colaboración y entrega incremental para gestionar proyectos y aprendizaje.
+    taxonomies:
+      - bloom: [ "Apply", "Analyze", "Evaluate" ]
+      - abet: [ "SO5", "SO6" ]
+    nsm_metrics:
+      - id: adaptability
+        display_name: "Capacidad de adaptación"
+        type: qualitative
+      - id: deliverable_quality
+        display_name: "Calidad de entregables"
+        type: quantitative
+    evidence:
+      - entregable_incremental
+      - feedback_cliente
+      - daily_logs
+    implementation_notes: |
+      Se promueve el uso de reuniones diarias, revisión de entregas y adaptación continua del plan de trabajo.
+    references:
+      - "Beck, K. et al. (2001). Manifesto for Agile Software Development."
+    template: agile.md.jinja
+
+  - id: active_methods
+    display_name: "Active Learning Methods"
+    description: >
+      Estrategias que colocan al estudiante en el centro del proceso a través de actividades prácticas, debates, resolución de casos y aprendizaje colaborativo.
+    taxonomies:
+      - bloom: [ "Apply", "Analyze", "Evaluate" ]
+      - abet: [ "SO1", "SO2" ]
+    nsm_metrics:
+      - id: participation_rate
+        display_name: "Tasa de participación"
+        type: quantitative
+      - id: learning_gain
+        display_name: "Progreso en el aprendizaje"
+        type: quantitative
+    evidence:
+      - ejercicios_en_clase
+      - discusiones
+      - portfolios
+    implementation_notes: |
+      Incluir actividades prácticas, debates en grupos pequeños, aprendizaje basado en proyectos y estudio de casos.
+    references:
+      - "Bonwell, C. & Eison, J. (1991). Active Learning: Creating Excitement in the Classroom."
+    template: active.md.jinja
+
+  - id: microlearning
+    display_name: "Microlearning"
+    description: >
+      El contenido se divide en módulos breves y enfocados (5–10 minutos), facilitando el aprendizaje autónomo, repetición y acceso flexible.
+    taxonomies:
+      - bloom: [ "Remember", "Understand", "Apply" ]
+    nsm_metrics:
+      - id: module_completion
+        display_name: "Módulos completados"
+        type: quantitative
+      - id: knowledge_retention
+        display_name: "Retención del conocimiento"
+        type: quantitative
+    evidence:
+      - quiz_rapido
+      - minireflexion
+    implementation_notes: |
+      Usar videos, podcasts o lecturas breves seguidos de pequeñas autoevaluaciones.
+    references:
+      - "Hug, T. (2005). Micro Learning and Narration."
+    template: microlearning.md.jinja
+
+  - id: peer_instruction
+    display_name: "Peer Instruction"
+    description: >
+      Los estudiantes explican conceptos a sus compañeros, promoviendo comprensión profunda mediante discusión guiada y preguntas conceptuales.
+    taxonomies:
+      - bloom: [ "Understand", "Analyze", "Evaluate" ]
+    nsm_metrics:
+      - id: peer_explanation
+        display_name: "Calidad de explicaciones entre pares"
+        type: qualitative
+      - id: concept_mastery
+        display_name: "Dominio de conceptos"
+        type: quantitative
+    evidence:
+      - respuesta_conceptual
+      - explicacion_entre_pares
+    implementation_notes: |
+      Formular preguntas conceptuales y organizar debates donde los estudiantes expliquen sus respuestas entre sí.
+    references:
+      - "Mazur, E. (1997). Peer Instruction: A User's Manual."
+    template: peer_instruction.md.jinja
+
+  - id: gamification
+    display_name: "Gamification"
+    description: >
+      Se incorporan mecánicas de juego (puntos, badges, retos) para motivar el aprendizaje y la participación activa.
+    taxonomies:
+      - bloom: [ "Apply", "Analyze", "Evaluate" ]
+    nsm_metrics:
+      - id: badges_earned
+        display_name: "Insignias obtenidas"
+        type: quantitative
+      - id: engagement_score
+        display_name: "Nivel de engagement"
+        type: quantitative
+    evidence:
+      - logros
+      - badges
+      - rankings
+    implementation_notes: |
+      Crear retos, rankings o recompensas visibles para promover participación y progreso.
+    references:
+      - "Deterding, S. et al. (2011). Gamification: Toward a definition."
+    template: gamification.md.jinja
+  - id: design_thinking
+    display_name: "Design Thinking"
+    description: >
+      Los estudiantes resuelven desafíos siguiendo fases de empatía, definición, ideación, prototipado y testeo, priorizando creatividad y enfoque en el usuario final.
+    taxonomies:
+      - bloom: [ "Analyze", "Create", "Evaluate" ]
+      - abet: [ "SO2", "SO3", "SO5" ]
+    nsm_metrics:
+      - id: prototype_quality
+        display_name: "Calidad del prototipo"
+        type: qualitative
+      - id: user_feedback
+        display_name: "Feedback de usuarios"
+        type: qualitative
+    evidence:
+      - prototipo
+      - feedback_usuario
+      - presentacion_iterativa
+    implementation_notes: |
+      Utiliza entrevistas, mapas de empatía, lluvia de ideas, storyboards y prototipos rápidos. El docente facilita las etapas y anima a iterar.
+    references:
+      - "Brown, T. (2008). Design Thinking. Harvard Business Review."
+    template: design_thinking.md.jinja
+
+  - id: experiential_learning
+    display_name: "Experiential Learning"
+    description: >
+      Aprendizaje a través de la experiencia directa, reflexión, conceptualización y aplicación activa, siguiendo el ciclo de Kolb.
+    taxonomies:
+      - bloom: [ "Apply", "Analyze", "Reflect" ]
+      - abet: [ "SO1", "SO4" ]
+    nsm_metrics:
+      - id: reflection_depth
+        display_name: "Profundidad de la reflexión"
+        type: qualitative
+      - id: skill_application
+        display_name: "Aplicación de habilidades"
+        type: quantitative
+    evidence:
+      - diario_reflexivo
+      - portafolio
+      - actividad_practica
+    implementation_notes: |
+      Ciclo: experiencia concreta → observación reflexiva → conceptualización → experimentación activa. Incorporar actividades prácticas seguidas de reflexión estructurada.
+    references:
+      - "Kolb, D. A. (1984). Experiential learning: Experience as the source of learning and development."
+    template: experiential_learning.md.jinja
+
+  - id: service_learning
+    display_name: "Service Learning"
+    description: >
+      Integración de proyectos de servicio comunitario con objetivos académicos, promoviendo ciudadanía y reflexión crítica sobre el impacto social.
+    taxonomies:
+      - bloom: [ "Apply", "Analyze", "Reflect", "Evaluate" ]
+      - abet: [ "SO3", "SO5", "SO7" ]
+    nsm_metrics:
+      - id: community_impact
+        display_name: "Impacto en la comunidad"
+        type: qualitative
+      - id: civic_engagement
+        display_name: "Compromiso cívico"
+        type: quantitative
+    evidence:
+      - proyecto_servicio
+      - reflexion_impacto
+      - presentacion_comunidad
+    implementation_notes: |
+      Conecta el contenido de clase con necesidades reales de la comunidad. Incluye fases de preparación, acción, reflexión y celebración.
+    references:
+      - "Eyler, J., & Giles, D. (1999). Where's the Learning in Service-Learning?"
+    template: service_learning.md.jinja
+
+  - id: project_based
+    display_name: "Project-Based Learning (PjBL)"
+    description: >
+      Los estudiantes desarrollan proyectos complejos y realistas durante un periodo extendido, integrando conocimientos y habilidades de distintas áreas.
+    taxonomies:
+      - bloom: [ "Analyze", "Apply", "Create" ]
+      - abet: [ "SO2", "SO4", "SO6" ]
+    nsm_metrics:
+      - id: project_quality
+        display_name: "Calidad del proyecto"
+        type: qualitative
+      - id: interdisciplinary_skill
+        display_name: "Habilidad interdisciplinar"
+        type: quantitative
+    evidence:
+      - proyecto_final
+      - presentacion
+      - autoevaluacion
+    implementation_notes: |
+      Define una pregunta esencial y retos auténticos. El docente guía, da feedback continuo y fomenta la exposición pública de los proyectos.
+    references:
+      - "Thomas, J. W. (2000). A Review of Research on Project-Based Learning."
+    template: project_based.md.jinja
+
+  - id: capstone
+    display_name: "Capstone Project"
+    description: >
+      Proyecto final integrador donde los estudiantes aplican conocimientos y habilidades adquiridos a lo largo de la carrera en un reto auténtico, a menudo en colaboración con empresas o socios externos.
+    taxonomies:
+      - bloom: [ "Apply", "Analyze", "Create", "Evaluate" ]
+      - abet: [ "SO1", "SO2", "SO3", "SO4", "SO5", "SO6", "SO7" ]
+    nsm_metrics:
+      - id: project_outcome
+        display_name: "Resultados del proyecto"
+        type: qualitative
+      - id: industry_feedback
+        display_name: "Retroalimentación de socios externos"
+        type: qualitative
+    evidence:
+      - informe_final
+      - defensa_publica
+      - feedback_industria
+    implementation_notes: |
+      Asegurar la integración multidisciplinar, reuniones periódicas de seguimiento y defensa pública. Idealmente, con asesoría dual: académica y profesional.
+    references:
+      - "Dutson, A.J., et al. (1997). A Review of Literature on Capstone Courses."
+    template: capstone.md.jinja
+
+  - id: case_method
+    display_name: "Case Method (Harvard)"
+    description: >
+      Análisis profundo de casos reales o simulados que promueven el pensamiento crítico, toma de decisiones y discusión estructurada en clase.
+    taxonomies:
+      - bloom: [ "Analyze", "Evaluate", "Apply" ]
+    nsm_metrics:
+      - id: participation_rate
+        display_name: "Participación en discusión"
+        type: qualitative
+      - id: decision_justification
+        display_name: "Justificación de decisiones"
+        type: qualitative
+    evidence:
+      - participacion_en_debate
+      - decision_final
+      - reflexion_caso
+    implementation_notes: |
+      Distribuye el caso antes de clase, fomenta la lectura previa y utiliza preguntas guía para la discusión. Asume roles (defensor, crítico, juez, etc.).
+    references:
+      - "Garvin, D.A. (2003). Making the Case: Professional Education for the World of Practice."
+      - "Harvard Business School: The Case Method."
+    template: case_method.md.jinja
+
+  - id: ai_adaptive_learning
+    display_name: "AI-Driven Adaptive Learning"
+    description: >
+      El aprendizaje se personaliza mediante sistemas inteligentes que adaptan contenidos, actividades y evaluaciones en tiempo real según el avance y necesidades del estudiante.
+    taxonomies:
+      - bloom: [ "Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create" ]
+      - cbe: [ "Personalized Pathways" ]
+    nsm_metrics:
+      - id: mastery_rate
+        display_name: "Tasa de dominio individual"
+        type: quantitative
+      - id: adaptation_events
+        display_name: "Número de adaptaciones realizadas"
+        type: quantitative
+    evidence:
+      - ruta_personalizada
+      - progreso_adaptativo
+      - autoevaluacion
+    implementation_notes: |
+      Utiliza plataformas de adaptive learning que ajustan el nivel, ritmo y tipo de actividades. La IA puede sugerir recursos o actividades de refuerzo específicas.
+    references:
+      - "Pane, J. F., et al. (2017). Informing Progress: Insights on Personalized Learning Implementation and Effects."
+    template: ai_adaptive_learning.md.jinja
+
+  - id: challenge_based_learning
+    display_name: "Challenge-Based Learning (CBL)"
+    description: >
+      Los estudiantes abordan desafíos globales o locales, definiendo preguntas esenciales, investigando y prototipando soluciones de impacto real.
+    taxonomies:
+      - bloom: [ "Analyze", "Create", "Evaluate" ]
+      - sdgs: [ "SDG4", "SDG9", "SDG17" ]
+    nsm_metrics:
+      - id: challenge_solution
+        display_name: "Calidad de solución al desafío"
+        type: qualitative
+      - id: societal_impact
+        display_name: "Impacto social"
+        type: quantitative
+    evidence:
+      - prototipo_solucion
+      - presentacion_final
+      - reporte_impacto
+    implementation_notes: |
+      Inspirado en Apple Distinguished Educators y Global Challenge Projects. Se promueve el trabajo interdisciplinar y la colaboración con actores externos.
+    references:
+      - "Nichols, M. (2016). Challenge-Based Learning: The Report from the Implementation Project."
+    template: challenge_based_learning.md.jinja
+
+  - id: competency_based_education
+    display_name: "Competency-Based Education (CBE)"
+    description: >
+      El avance del estudiante se basa en el logro de competencias claramente definidas, más que en el tiempo o las horas de clase.
+    taxonomies:
+      - cbe: [ "Competencies", "Mastery" ]
+      - bloom: [ "Apply", "Evaluate", "Create" ]
+    nsm_metrics:
+      - id: competency_achievement
+        display_name: "Competencias alcanzadas"
+        type: quantitative
+      - id: time_to_mastery
+        display_name: "Tiempo hasta el dominio"
+        type: quantitative
+    evidence:
+      - portafolio_competencias
+      - evaluacion_autentica
+      - badge_digital
+    implementation_notes: |
+      Las rutas de aprendizaje son flexibles; se usan rúbricas y evaluaciones de desempeño para certificar cada competencia.
+    references:
+      - "Le, C., Wolfe, R., & Steinberg, A. (2014). The Past and the Promise: Today's Competency Education Movement."
+    template: competency_based_education.md.jinja
+
+  - id: socratic_seminar
+    display_name: "Socratic Seminar"
+    description: >
+      Discusión estructurada donde los estudiantes exploran ideas complejas a través de preguntas abiertas y diálogo crítico, guiados por el docente como facilitador.
+    taxonomies:
+      - bloom: [ "Understand", "Analyze", "Evaluate" ]
+    nsm_metrics:
+      - id: participation_quality
+        display_name: "Calidad de la participación"
+        type: qualitative
+      - id: argumentation_depth
+        display_name: "Profundidad de argumentos"
+        type: qualitative
+    evidence:
+      - transcripcion_discusion
+      - reflexion_final
+    implementation_notes: |
+      Selecciona un texto disparador, formula preguntas abiertas y fomenta la escucha activa y el razonamiento argumentativo.
+    references:
+      - "Copeland, M. (2005). Socratic Circles: Fostering Critical and Creative Thinking in Middle and High School."
+    template: socratic_seminar.md.jinja
+
+  - id: gamified_peer_assessment
+    display_name: "Gamified Peer Assessment"
+    description: >
+      Los estudiantes evalúan el trabajo de sus pares usando rúbricas estructuradas, incorporando elementos lúdicos como puntos, badges o rankings para fomentar la participación y la calidad del feedback.
+    taxonomies:
+      - bloom: [ "Evaluate", "Create" ]
+    nsm_metrics:
+      - id: feedback_quality
+        display_name: "Calidad del feedback"
+        type: qualitative
+      - id: assessment_engagement
+        display_name: "Participación en evaluación"
+        type: quantitative
+    evidence:
+      - calificacion_par
+      - feedback_ludico
+    implementation_notes: |
+      Utilizar plataformas de peer review con sistemas de badges/puntos. El docente valida y reconoce las mejores evaluaciones.
+    references:
+      - "Topping, K. J. (2009). Peer Assessment."
+    template: gamified_peer_assessment.md.jinja
+
+  - id: inquiry_based_science
+    display_name: "Inquiry-Based Science (IBL)"
+    description: >
+      El aprendizaje se centra en la investigación guiada, la formulación de hipótesis y la experimentación para resolver preguntas científicas abiertas.
+    taxonomies:
+      - bloom: [ "Analyze", "Evaluate", "Create" ]
+    nsm_metrics:
+      - id: inquiry_depth
+        display_name: "Nivel de indagación"
+        type: qualitative
+      - id: experiment_success
+        display_name: "Éxito en experimentos"
+        type: quantitative
+    evidence:
+      - informe_experimento
+      - presentacion_resultados
+      - reflexion_cientifica
+    implementation_notes: |
+      Fomenta la exploración y la curiosidad científica con laboratorios prácticos, proyectos de investigación y debates de resultados.
+    references:
+      - "National Research Council (2000). Inquiry and the National Science Education Standards."
+    template: inquiry_based_science.md.jinja
+
+  - id: mooc_hybrid_hyflex
+    display_name: "MOOC / Hybrid / HyFlex"
+    description: >
+      Modelos flexibles que combinan aprendizaje presencial, remoto y asíncrono, permitiendo a los estudiantes elegir cómo y cuándo participar.
+    taxonomies:
+      - bloom: [ "Understand", "Apply", "Analyze" ]
+    nsm_metrics:
+      - id: participation_mode
+        display_name: "Modalidad de participación"
+        type: qualitative
+      - id: completion_rate
+        display_name: "Tasa de finalización"
+        type: quantitative
+    evidence:
+      - log_participacion
+      - entregas_online
+      - autoevaluacion
+    implementation_notes: |
+      Se ofrecen múltiples vías de acceso: MOOC, clases presenciales o en streaming, actividades sincrónicas y asincrónicas.
+    references:
+      - "Beatty, B.J. (2019). Hybrid-Flexible Course Design."
+    template: mooc_hybrid_hyflex.md.jinja
+
+  - id: learning_analytics_portfolio
+    display_name: "Learning Analytics / Portfolio-Based Assessment"
+    description: >
+      Seguimiento del aprendizaje mediante análisis de datos educativos y construcción de portafolios digitales como evidencia de logros y progreso individual.
+    taxonomies:
+      - bloom: [ "Remember", "Apply", "Evaluate" ]
+    nsm_metrics:
+      - id: analytics_usage
+        display_name: "Uso de learning analytics"
+        type: quantitative
+      - id: portfolio_quality
+        display_name: "Calidad del portafolio"
+        type: qualitative
+    evidence:
+      - portafolio_digital
+      - dashboard_analitico
+      - reflexion_personal
+    implementation_notes: |
+      Usar plataformas de e-portfolio y dashboards de analytics para monitorear el avance, identificar áreas de mejora y personalizar feedback.
+    references:
+      - "Siemens, G. (2013). Learning Analytics: The Emergence of a Discipline."
+    template: learning_analytics_portfolio.md.jinja
+  
+  - id: team_based_learning
+    display_name: "Team-Based Learning (TBL)"
+    description: >
+      Aprendizaje estructurado en equipos permanentes con preparación previa, pruebas individuales y grupales, y actividades de aplicación auténtica.
+    taxonomies:
+      - bloom: [ "Understand", "Apply", "Analyze" ]
+    nsm_metrics:
+      - id: team_performance
+        display_name: "Desempeño del equipo"
+        type: quantitative
+      - id: readiness_assurance
+        display_name: "Preparación previa asegurada"
+        type: quantitative
+    evidence:
+      - pruebas_preparacion
+      - ejercicio_grupal
+      - evaluacion_par
+    implementation_notes: |
+      Forma equipos estables, inicia con pruebas de preparación (iRAT/gRAT), luego resuelve problemas complejos en grupo.
+    references:
+      - "Michaelsen, L.K., Knight, A.B., & Fink, L.D. (2004). Team-Based Learning: A Transformative Use of Small Groups."
+    template: team_based_learning.md.jinja

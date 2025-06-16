@@ -1,0 +1,49 @@
+# {{ activity_title }}
+
+{% if carrera or semestre or materia or tema %}
+> **Carrera:** {{ carrera or '' }}  
+> **Semestre:** {{ semestre or '' }}  
+> **Materia/Curso:** {{ materia or '' }}  
+> **Tema:** {{ tema or '' }}
+{% endif %}
+
+**Estrategia:** {{ strategy_id.replace('_', ' ') | capitalize }}
+
+---
+
+## Descripción de la Actividad
+{{ activity_description }}
+
+## Objetivos de Aprendizaje
+{% for obj in learning_objectives %}
+- {{ obj }}
+{% endfor %}
+
+## Prework
+{{ prework_instructions }}
+
+## Actividad Presencial
+{{ in_class_activity }}
+
+## Evidencias Esperadas
+{% for evidence in expected_evidence %}
+- {{ evidence }}
+{% endfor %}
+
+{% if rubric %}
+---
+
+## Rúbrica / Criterios de Evaluación
+
+{{ rubric }}
+{% endif %}
+
+---
+
+*Notas para el docente:*  
+{{ implementation_notes }}
+
+**Referencias:**  
+{% for ref in references %}
+- {{ ref }}
+{% endfor %}
